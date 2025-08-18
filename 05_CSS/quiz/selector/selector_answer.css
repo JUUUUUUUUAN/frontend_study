@@ -31,7 +31,8 @@ header nav .main-menu {
 /* 7. 82~85 라인의 type이 text인 <input>태그에 focus 됐을 때의 선택자를 작성(속성 선택자 필수) */
 /* 단, 마지막 읽기 전용 input은 선택에서 제외 */
 /* border가 아닌 background-color로 테스트 할 것! */
-[type=text]:not(:last-child) {
+/* [type=text]:focus:not([readonly])도 가능함 */
+[type=text]:focus:not(input[readonly]) {
   background-color: red;
 }
 
