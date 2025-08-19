@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .profile {
+      text-align: center
+    }
+    .profile img {
+      /* (참고) img는 인라인 요소이지만 인라인-블록처럼 동작 */
+      width: 150px;
+      height: 150px;
+      /* 요소를 원으로 만들기 */
+      border-radius: 50%;
+      /* 이미지를 가운데 정렬하기(2가지) */
+      /* 1) 부모에 text-align: center */
+      /* 2) 가로 길이를 갖는 블록 요소에 margin: 0 auto; */
+      /* display: block;
+      margin: 50px auto 0; */
+    }
+
+    .title {
+      /* 글자 가운데 정렬하기 */
+      font-size: 30px;
+      text-align: center;
+    }
+
+    .content {
+    text-align: center;
+    font-size: 24px;
+    }
+    /* 일부 글자만 스타일링 */
+    .content span {
+      font-weight: bold;
+      color: red;
+    }
+
+    .box {
+      width: 500px;
+      background-color: rgb(92, 176, 231);
+      margin: 0 auto;
+      border-radius: 5px;
+      padding: 10px 0px;
+      color: white;
+      text-align: center;
+      white-space: pre;
+
+      box-shadow: 5px 5px #555;
+    }
+  </style>
+  
+</head>
+<body>
+  <!-- 주어진 구조 외에 추가 가능 -->
+  <div class="profile">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2QbkW3oRDc4sPX92saw1VIREy4KXR6kdWgg&s" alt="프로필사진">
+  </div>
+
+  <h3 class="title">고등어</h3>
+
+  <p class="content">
+    <span>Cute</span> Cat  </p>
+
+  <div class="box">
+    안녕하세요. 저는 고등어 태비입니다.
+    저의 줄무늬는 고등어 모양이며, 품종은 토종 한국 고양이입니다.
+    주식은 물고기입니다.
+  </div>
+
+</body>
+</html>
