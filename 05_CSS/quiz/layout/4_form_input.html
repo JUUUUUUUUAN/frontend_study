@@ -70,9 +70,7 @@
       padding: 10px;
       font-size: 18px;
     }
-    .check-agree {
-      display: inline;
-    }
+
 
     .send-button {
       padding: 10px 30px;
@@ -87,16 +85,17 @@
     }
 
     .bottom {
-      position: relative;
+      display: flex;
+      justify-content: space-between;
+    }
+    .bottom .agree {
+      display: flex; 
     }
     .bottom input[type="checkbox"]{
       width: 25px;
       height: 25px;
     }
-    .bottom button {
-      position: absolute;
-      right: 0;
-    }
+
 
     
   </style>
@@ -152,8 +151,10 @@
           <textarea id="message-box" rows="6"></textarea>
           
           <div class="bottom">
-            <input type="checkbox" id="agree">
-            <label for="agree">Agree</label>
+            <div class="agree">
+              <input type="checkbox" id="agree">
+              <label for="agree">Agree</label>
+            </div>
             <button type="button" class="send-button">SEND</button>
           </div>
         </form>
