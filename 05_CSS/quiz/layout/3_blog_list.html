@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    /* 공통 초기화 부분은 앞부분에 작성해주기 */
+    a {
+      text-decoration: none;
+      color: black;
+    }
+    .navbar {
+      display: flex;
+      list-style: none;
+      text-align: center;
+    }
+
+    .navbar li {
+      width: 50px;
+      height: 30px;
+      background-color: #eee;
+      line-height: 30px;
+      border-radius: 3px;
+      font-size: 12px;
+    }
+
+    .navbar li + li {
+      margin-left: 10px;
+    }
+
+    .container {
+      width: 800px;
+      margin: 0 auto;
+      padding: 10px;
+    }
+
+    .container .blog-list-item {
+      display: flex;
+    }
+
+    .container .blog-list-item .blog-content {
+      width: 80%;
+      /* background-color: #eee; */
+    }
+
+    .content-header {
+      display: flex;
+      align-items: center;
+    }
+
+    .content-header img{
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+    }
+    .name > h3, .name >p {
+      margin: 5px;
+    }
+    .blog-img {
+      width: 20%;
+      background-color: #ccc;
+      /* background-image: url("../../images/logo.png");
+      background-size: cover;
+      background-position: center; */
+    }
+
+    .blog-img img {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <!-- Tip! 레이아웃 만드는 기본
+    뭘 만들든 레이아웃은 항상 수평(행)으로 자른 후 박스부터 만들고 시작하면 됨
+    그리고 이 박스들을 전부 <div>로 구현해 놓으면 됨(물론 시맥틱 태그도 최대한 활용)
+    그리고 박스 안에 글 넣고 그림 넣고 하면 끝!
+
+    이 때 <div>는 블록 요소이기 때문에 위아래로 배치
+    좌우로 나란히 배치하고 싶으면 float, inline-block, Flexbox
+    -->
+    <!-- 이모지 단축키: 윈도우키 + 마침표 -->
+
+    <!-- navbar -->
+    <nav>
+      <ul class="navbar">
+        <li><a href="#">영화</a></li>
+        <li><a href="#">맛집</a></li>
+        <li><a href="#">IT</a></li>
+        <li><a href="#">컴퓨터</a></li>
+      </ul>
+    </nav>
+
+    <!-- blog list -->
+    <div class="container">
+      <!-- blog list item: 게시글 하나 -->
+        <div class="blog-list-item">
+          <div class="blog-content">
+            <div class="content-header">
+              <!-- 프로필 이미지 -->
+                <img src="../../images/img_avatar.png" alt="프로필 이미지">
+              <!-- 작성자, 시간 -->
+                <div class="name">
+                  <h3>김고니</h3>
+                  <p>1시간 전</p>
+                </div>
+            </div>
+            <div class="content-body">
+              <!-- 글 제목, 글 내용 -->
+                <h3> 가성비 맛집을 발견했어요!</h3>
+                <p>소고기 맛있어. 초밥 맛있어, 치킨 맛있어, 돼지고기 맛있어, 쌀국수 맛있어, 돈까스 맛있어, 숯불닭갈비 맛있어, 한우한우한돈한돈, 피자맛있어,
+                  맛있는 맥주 맛있어, 회 맛있어, 한식은 다 맛있어.
+                </p>
+            </div>
+          </div>
+          <div class="blog-img">
+            <!-- 샘플 이미지 -->
+              <img src="../../images/logo.png" alt="로고">
+          </div>
+        </div>
+    </div>
+</body>
+</html>
