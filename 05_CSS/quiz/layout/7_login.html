@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    label {
+      color: #bbb;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      outline: none;
+      position: relative;
+      height: 50px;
+    }
+
+    .login-background {
+      width: 60%;
+      margin: 0 auto;
+    }
+    .login-container {
+      border: 1px solid lightgray;
+      border-radius: 10px;
+      padding: 20px;
+    }
+    .id-box, .pw-box {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid #bbb;
+      position: relative;
+    }
+    .id-box {
+      border-radius: 8px 8px 0 0;
+    }
+    .pw-box{
+      border-top: 0;
+      border-radius: 0 0 8px 8px;
+    }
+    .id-box label, .pw-box label{
+      position: absolute;
+      z-index: 1;
+      top: 10px;
+      left: 10px;
+      transition: 1s;
+    }
+    .id-box input:focus + label,
+    .pw-box input:focus + label {
+      font-size: 12px;
+      top: 5px;
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 15px 80px;
+      border: none;
+      border-radius: 10px;
+    }
+    .login-container button:nth-child(3) {
+      background-color: green;
+      font-weight: bold;
+      margin-top: 30px;
+    }
+    .login-container button:last-child {
+      color: green;
+      font-weight: bold;
+      border: 1px solid green;
+      background-color: #fff;
+    }
+    .btn + .btn{
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-background">
+    <div class="login-container">
+      <div class="id-box">
+        <input type="text" id="id">
+        <label for="id">아이디 또는 전화번호</label>
+      </div>
+      <div class="pw-box">
+        <input type="password" id="pw">
+        <label for="pw">비밀번호</label>
+      </div>
+
+      <button type="button" class="btn">로그인</button>
+      <button type="button" class="btn">회원가입</button>
+    </div>
+  </div>
+</body>
+</html>
