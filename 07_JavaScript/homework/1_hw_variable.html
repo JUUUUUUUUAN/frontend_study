@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+</head>
+<body>
+  <!-- 1번 문제 -->
+  <h1>자라나라 스폰지밥</h1>
+  <button type="button" onclick="plusImg()" style="display: block;">
+    <span class="material-symbols-outlined">add</span>
+  </button>
+  <img src="images/sponge.png" alt="" width="150" height="200" id="sponge">
+
+  <script>
+    function plusImg() {
+      const img = document.querySelector('#sponge');
+      // 주의! 이미지는 가로 사이즈만 바꾸면 자동으로 세로 사이즈도 바뀜
+      
+      img.width += 100;
+      img.height += 100;
+    }
+  </script>
+
+  <!-- 2번 문제 -->
+  <h3>이미지 크기 조정</h3>
+  <label for="width">가로 : </label>
+  <input type="number" id="width">
+  <br>
+  <label for="height">세로 : </label>
+  <input type="number" id="height">
+  <button type="button" onclick="sizeImg()" display="inline">변경</button>
+  <img src="images/dung.png" alt="" width="150" height="200" id="dung" style="display: block;">
+  
+  <script>
+    function sizeImg() {
+      const img = document.querySelector('#dung');
+      const widthValue = document.querySelector('#width').value;
+      const heightValue = document.querySelector('#height').value;
+      console.log(widthValue);
+      console.log(heightValue);
+
+      img.width = widthValue;
+      img.height = heightValue;
+    }
+  </script>
+</body>
+</html>

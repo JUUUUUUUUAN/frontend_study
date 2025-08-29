@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    table, td {
+      border: 1px solid #000;
+    }
+
+    .gyul {
+      display: inline-block;
+      margin-left: 10px;
+    }
+  </style>
+</head>
+<body>
+  <!-- 1번 문제 -->
+  <h1>콤보세트</h1>
+  <label for="combo">개수:</label>
+  <input type="number">
+  <button type="button" class="od-btn">주문</button>
+  <div class="comboBox">
+
+  </div>
+  <!-- <div>
+    <img src="images/popcorn.png" alt="팝콘">
+    <img src="images/coke.png" alt="콜라">
+    <img src="images/coke.png" alt="콜라">
+  </div> -->
+
+
+  <!-- 2번 문제 -->
+  <h1>
+    행 열 갯수 각각 입력받아 테이블 만들기
+  </h1>
+  <div class="tableBox"></div>
+
+  <script>
+    // 1번문제
+    const orderBtn = document.querySelector('.od-btn');
+    console.log(orderBtn);
+    const comboBox = document.querySelector('.comboBox');
+    console.log(comboBox);
+    
+    orderBtn.addEventListener('click', function(){
+      const num = document.querySelector('input');
+      console.log(num.value);
+      for (let i = 0; i < num.value; i++) {
+        comboBox.innerHTML += '<div><img src="images/popcorn.png" alt="팝콘"><img src="images/coke.png" alt="콜라"><img src="images/coke.png" alt="콜라"></div>';
+      }
+    });
+
+    // 2번문제
+    const r = Number(prompt('테이블 행의 갯수는?'));
+    const c = Number(prompt('테이블 열의 갯수는?'));
+    let num = 1;
+    let table = '<table >';
+
+    for(let i = 0; i < r; i++){
+      table += '<tr>';
+        for (let j = 0; j < c; j++) {
+          table += `<td>${num++}</td>`;
+        }
+        table += '</tr>';
+    }
+    table += '</table>';
+    document.write(table);
+  </script>
+
+
+  <!-- 3번 문제 -->
+  <h1>철수의 귤농장</h1>
+  <div class="gyulBox">
+    <div class="gyul">
+      <p>귤 10g</p>
+      <img src="images/gyul.png" alt="귤">
+    </div>
+  </div>
+
+  <script>
+    const total = Number(prompt('g?'));
+    const gyulBox = document.querySelector('.gyulBox');
+    const count = total / 10;
+    for (let i = 1; i < count; i++) {
+      gyulBox.innerHTML += '<div class="gyul"><p>귤 10g</p><img src="images/gyul.png" alt="귤"></div>';
+    }
+
+  </script>
+</body>
+</html>

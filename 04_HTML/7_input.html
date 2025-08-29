@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=no_sound" />
 
   <style>
     /* :가상 클래스 선택자::가상 요소 선택자 */
@@ -167,6 +168,29 @@
   <label for="volume">음량(0~50):</label>
   <input type="range" id="volume" min="0" max="50" step="2">
 
+  <!-- Quiz -->
+  <span id="volumeValue"></span>
+  <!-- <span class="material-symbols-outlined">no_sound</span> -->
+  <script>
+    const volume = document.querySelector('#volume');
+    const spanTag = document.querySelector('#volumeValue');
+    console.log(volume);
+    console.log(spanTag);
+    // 초기값
+    spanTag.textContent = volume.value;
+    // volume.addEventListener('input', function(){
+    //   if (volume.value === '0') {
+    //     spanTag.classList.add('material-symbols-outlined');
+    //     spanTag.textContent = 'no_sound';
+    //   } else {
+    //     spanTag.textContent = volume.value;
+    //   }
+    // });
+    volume.addEventListener('change', function(){
+      spanTag.textContent = volume.value;
+    });
+    
+  </script>
   <hr>
 
   <!-- 비밀번호 -->

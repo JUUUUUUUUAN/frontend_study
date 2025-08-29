@@ -23,7 +23,6 @@
       padding: 10px;
       border: none;
       outline: none;
-      position: relative;
       height: 50px;
     }
 
@@ -43,9 +42,7 @@
       padding: 20px;
     }
     .id-box, .pw-box {
-      height: 50px;
-      display: flex;
-      flex-direction: column;
+      height: 70px;
       border: 1px solid #bbb;
       position: relative;
       /* input 박스를 아래에 두기 위해 탑에 패딩을 넣음 */
@@ -61,7 +58,6 @@
     .pw-box{
       border-top: 0;
       border-radius: 0 0 8px 8px;
-      position: relative;
     }
   
 
@@ -73,7 +69,10 @@
       transition: 0.3s;
     }
     .id-box input:focus + label,
-    .pw-box input:focus + label {
+    .pw-box input:focus + label,
+    .id-box.on label,
+    .pw-box.on label
+    {
       font-size: 12px;
       top: 5px;
     }
@@ -108,7 +107,7 @@
     }
     .login-container .icon-eye {
       position: absolute;
-      top: 14px;
+      top: 18px;
       right: 15px;
       cursor: pointer;
     }
@@ -157,6 +156,25 @@
       inputEl.addEventListener('blur', function () {
         parentEl.classList.remove('focused');
       })
+
+      // 이벤트 추가 실습
+      // change: 요소의 값이 변경되고 포커스를 잃었을 때 발생
+      inputEl.addEventListener('change', function(){
+        console.log('change 이벤트 발생!');
+        console.log(inputEl.value);
+
+        if (inputEl.value) { // input 요소에 값이 있으면
+          parentEl.classList.add('on');
+        } else {
+          parentEl.classList.remove('on');
+        }
+      });
+
+      // input: 요소가 입력을 받을 때마다 변경된 직후에 발생
+      inputEl.addEventListener('input', function(){
+        console.log('input 이벤트 발생!');
+        
+      });
     });
 
     // 아이콘 클릭했을 때 변경(on/off)
@@ -181,6 +199,7 @@
         pwToTxt.type = "password";
       }
     })
+    
 
   </script>
 </body>

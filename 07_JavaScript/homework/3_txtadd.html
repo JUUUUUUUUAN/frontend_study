@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  
+  <style>
+    * {
+      font-size: 20px;
+    }
+    textarea {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>문자 누적하기</h1>
+  <div>
+    <input type="text" id="inputTxt">
+    <button type="button" id="add-btn">누적</button>
+  </div>
+  <textarea id="txtBox" cols="30" rows="6" style="resize: none;"></textarea>
+
+  <script>
+    const add = document.querySelector('#add-btn');
+    const txt = document.querySelector('#inputTxt');
+    const txtBoxEl = document.querySelector('#txtBox');
+
+    add.addEventListener('click', function(){
+      // console.log(add, txt, txtBoxEl);
+      txtBoxEl.value += txt.value; // txtBoxEl.textContent value 동일한 결과값을 나타냄
+      txt.value = '';
+    })
+
+  </script>
+</body>
+</html>

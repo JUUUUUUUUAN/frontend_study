@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      height: 100vh;
+      background-color: rgb(red, green, blue);
+    }
+  </style>
+</head>
+<body>
+  <h1>랜덤 배경색</h1>
+  <button type="button" onclick="changeBgColor()">바꿔</button>
+
+  <script>
+    // const colors = ['AliceBlue', 'yellow', 'blue', 'orange', 'Azure']
+
+    function changeBgColor() {
+      const bodyTag = document.querySelector('body');
+      console.log(bodyTag);
+
+      // const randomNum = Math.floor(Math.random() * colors.length) ;
+      // console.log(randomNum);
+      
+      bodyTag.style.backgroundColor = `rgb(${Math.floor(Math.random() * (255 + 1))},
+      ${Math.floor(Math.random() * (255 + 1))},
+      ${Math.floor(Math.random() * (255 + 1))})`;
+      
+      console.log(Math.floor(Math.random() * (255 + 1)));
+      
+      // console.log(colors[randomNum]);
+      
+    }
+  </script>
+</body>
+</html>

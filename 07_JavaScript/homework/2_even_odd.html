@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  
+  <style>
+    .bead {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      background-color: blue;
+      border-radius: 50%;
+      margin: 0 10px;
+    }
+    div.bnt-box {
+      display: block;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>홀수? 짝수?</h1>
+  <div class="bnt-box">
+    <button type="button" id="btn-add">구슬 추가</button>
+    <button type="button" id="btn-check">홀짝</button>
+    <button type="button" id="btn-clean">초기화</button>
+  </div>
+
+  <div class="bead-box">
+    <div class="bead"></div>
+  </div>
+
+  <span class="count"></span>
+  <script>
+    // 구슬 추가
+    const add = document.querySelector('#btn-add');
+    const beadBox = document.querySelector('.bead-box');
+    console.log(add);
+    console.log(beadBox);
+
+    add.addEventListener('click', function(){
+      beadBox.innerHTML += '<div class="bead"></div>';
+    });
+
+    // 홀짝
+    const check = document.querySelector('#btn-check');
+    const count = document.querySelector('.count');
+    
+    check.addEventListener('click', function() {
+      const totalNum = document.querySelectorAll('.bead').length;
+      console.log(totalNum);
+
+      if(totalNum % 2 === 0) {
+        alert('짝수')
+      } else{
+        alert('홀수')
+
+      }
+    });
+
+    // 초기화
+    const clean = document.querySelector('#btn-clean');
+
+    clean.addEventListener('click', function(){
+      const beadList = document.querySelectorAll('.bead');
+      console.log(beadList);
+      for (let i = 0; i < beadList.length - 1; i++) {
+        beadList[i].remove();
+      }
+    });
+  </script>
+</body>
+</html>
