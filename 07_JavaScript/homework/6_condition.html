@@ -31,43 +31,54 @@
     <img src="images/coke.png" alt="콜라">
   </div> -->
 
-
-  <!-- 2번 문제 -->
-  <h1>
-    행 열 갯수 각각 입력받아 테이블 만들기
-  </h1>
-  <div class="tableBox"></div>
-
   <script>
     // 1번문제
     const orderBtn = document.querySelector('.od-btn');
     console.log(orderBtn);
     const comboBox = document.querySelector('.comboBox');
     console.log(comboBox);
-    
+
     orderBtn.addEventListener('click', function(){
-      const num = document.querySelector('input');
-      console.log(num.value);
-      for (let i = 0; i < num.value; i++) {
+      const odNum = document.querySelector('input');
+      console.log(odNum.value);
+      // innerHTML 값을 초기화 해주지 않으면 이전에 생성된 태그가 사라지지 않고 쌓임
+      // 초기화하여 태그 지우고 재생성 되게끔 만들어줘야 함
+      comboBox.innerHTML = '';
+      for (let i = 0; i < odNum.value; i++) {
         comboBox.innerHTML += '<div><img src="images/popcorn.png" alt="팝콘"><img src="images/coke.png" alt="콜라"><img src="images/coke.png" alt="콜라"></div>';
       }
     });
+  </script>
 
+  <!-- 2번 문제 -->
+  <h1>
+    행 열 갯수 각각 입력받아 테이블 만들기
+  </h1>
+  <div class="tableBox">
+    <button type="button" onclick="createTable()">테이블생성</button>
+  </div>
+
+
+  <script>
     // 2번문제
-    const r = Number(prompt('테이블 행의 갯수는?'));
-    const c = Number(prompt('테이블 열의 갯수는?'));
-    let num = 1;
-    let table = '<table >';
+    function createTable() {
+      const r = Number(prompt('테이블 행의 개수는?'));
+      const c = Number(prompt('테이블 열의 개수는?'));
+      const tableHtml = document.querySelector('.tableBox');
 
-    for(let i = 0; i < r; i++){
-      table += '<tr>';
-        for (let j = 0; j < c; j++) {
-          table += `<td>${num++}</td>`;
-        }
+      let num = 1;
+      let table = '<table>';
+  
+      for(let i = 0; i < r; i++){
+        table += '<tr>';
+          for (let j = 0; j < c; j++) {
+            table += `<td>${num++}</td>`;
+          }
         table += '</tr>';
+      }
+      table += '</table>';
+      tableHtml.innerHTML = table;
     }
-    table += '</table>';
-    document.write(table);
   </script>
 
 
